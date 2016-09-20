@@ -1,3 +1,11 @@
+<!------------------------
+#Variables
+-------------------------->
+
+<!------------------------
+#Content
+-------------------------->
+
 
 <!doctype html>
 <html class="no-js" lang="">
@@ -17,42 +25,42 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-<div class="main-wrapper">
-  <header class="main-header text-align--center">
+<header class="main-header text-align--center">
     <a href="index.html"><img class="image--small" src="img/logo@2x.png" alt=""></a>
 
   <div class="cart-summary">
-    Cart <span>0</span>
+    Cart <span>1</span>
   </div>
-</header>  <div class="main-content">
-    <div class="banner">
-      <img src="img/banner-sale@2x.png" />
-    </div>
-    <div>
-      <ul class="pizza-grid">
-        <li class="pizzas"><img src="img/pizza-fourway@2x.png"/></li>
-        <li class="pizzas"><img src="img/pizza-garden@2x.png"/></li>
-        <li class="pizzas"><img src="img/pizza-hawaiian@2x.png"/></li>
-        <li class="pizzas"><a href="" id="pizza-olive"><img src="img/pizza-olive@2x.png"/></a></li>
-        <li class="pizzas"><img src="img/pizza-pepperoni@2x.png"/></li>
-        <li class="pizzas"><a href="" id="pizza-shawarma"><img src="img/pizza-shwarma@2x.png"/></a></li>
-        <li class="pizzas"><img src="img/pizza-taco@2x.png"/></li>
-        <li class="pizzas"><img src="img/pizza-veggie@2x.png"/></li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="modal modal--peppersAndOlives hide">
-  <a href="cart.html">
-    <img src="img/popup@2x.png" alt="">
-  </a>
-</div>
+</header>
+<div class="main-content">
+  <header class="cart__header">
+    <a href="address-card-paypal.html">< Back</a>
+    <h2>Checkout</h2>
+  </header><!-- end cart header -->
 
-<div class="modal modal--shawarma hide">
-  <a href="cart--shawarma.html">
-    <img src="img/popup--shawarma@2x.png" alt="">
-  </a>
+<ol class="list list--inline progress-bar">
+  <li class="list__item list__item--inline nil ">1. Address Details</li>
+  <li class="list__item list__item--inline progress-bar--active">2. Shipping</li>
+  <li class="list__item list__item--inline ">3. Payment</li>
+  <li class="list__item list__item--inline ">4. Review</li>
+</ol><!-- end progress bar -->
+  <form action="" class="form form--basic">
+    <fieldset>
+      <label class="form__label" for="drone">
+            <input type="radio" name="shipping" id="drone" checked/> 1 hour shipping by drone ($40.00)
+          </label>
+      <label class="form__label" for="standard">
+        <input type="radio" name="shipping" id="standard"/> 4 hour standard delivery (Free)
+      </label>
+    </fieldset>
+
+  </form>
+
+  <button class="button button--main">
+    <a href="payment-card-paypal.html">Continue</a>
+  </button>
+
+
 </div>
         <footer class="main-footer">
         &copy; 1999 Pizza Warehouse

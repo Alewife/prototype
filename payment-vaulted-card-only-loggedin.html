@@ -33,7 +33,7 @@
   </div>
 </header><div class="main-content black50">
   <header class="cart__header">
-    <a href="index.html">< Back</a>
+    <a href="shipping-loggedin.html">< Back</a>
     <h2>Checkout</h2>
   </header><!-- end cart header -->
 
@@ -259,12 +259,11 @@
                   <!-- <div id="dropdownText" class="braintree-dropdown__option--default__text">Choose a payment method</div> -->
 
                   <svg height="28" width="48" class="braintree-icon">
-                      <use xlink:href="#logoPayPal"></use>
+                      <use xlink:href="#icon-visa"></use>
                   </svg>
-
                   <dl class="braintree-list--definition">
-                      <dt class="braintree-list__term">jesse@testing.com</dt>
-                      <dd class="braintree-list__desc">PayPal</dd>
+                      <dt class="braintree-list__term">Ending in ••35</dt>
+                      <dd class="braintree-list__desc">Visa</dd>
                   </dl>
 
                   <svg height="24" width="24" id="braintreeArrow" class="braintree-icon--arrow">
@@ -274,32 +273,23 @@
           </div>
 
           <div id="braintreePaymentOptions" class="braintree-dropdown__option--container braintree-hide">
-            <h2 class="braintree-dropdown__category">Saved Payment Methods</h2>
+              <h2 class="braintree-dropdown__category">Saved Payment Methods</h2>
 
-            <a class="braintree-dropdown__option braintree-dropdown__option--vaulted braintree-dropdown__option--divider">
-              <svg height="28" width="48" class="braintree-icon">
-                  <use xlink:href="#logoPayPal"></use>
-              </svg>
+              <a class="braintree-dropdown__option braintree-dropdown__option--vaulted braintree-dropdown__option--divider">
+                  <svg height="28" width="48" class="braintree-icon">
+                      <use xlink:href="#icon-visa"></use>
+                  </svg>
+                  <dl class="braintree-list--definition">
+                      <dt class="braintree-list__term">Ending in ••35</dt>
+                      <dd class="braintree-list__desc">Visa</dd>
+                  </dl>
 
-              <dl class="braintree-list--definition">
-                  <dt class="braintree-list__term">jesse@testing.com</dt>
-                  <dd class="braintree-list__desc">PayPal</dd>
-              </dl>
-
-
-                <svg height="24" width="24" class="braintree-icon--check">
-                    <use xlink:href="#iconCheck"></use>
-                </svg>
-            </a>
-
-            <h2 class="braintree-dropdown__category">Add Another Payment Method</h2>
-
-              <a href="payment-paypal-1.html" class="braintree-dropdown__option braintree-dropdown__option--divider">
-                  <label class="braintree-dropdown__label" for="">PayPal</label>
-                  <div class="braintree-dropdown__image braintree-dropdown__image--padding">
-                      <img class="image--PayPal-button" src="img/PayPalButtonBlue.png" alt="">
-                  </div>
+                  <svg height="24" width="24" class="braintree-icon--check">
+                      <use xlink:href="#iconCheck"></use>
+                  </svg>
               </a>
+
+              <h2 class="braintree-dropdown__category">Add Another Payment Method</h2>
 
               <a id="addCardPayment" class="braintree-dropdown__option">
                   <label class="braintree-dropdown__label" for="">Card</label>
@@ -441,7 +431,7 @@
   </div>
 
   <button class="button button--main">
-    <a href="review-paypal.html">Continue</a>
+    <a href="review-card-only-loggedin.html">Continue</a>
   </button>
 
 </div><!-- end main content -->

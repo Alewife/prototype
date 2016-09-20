@@ -6,6 +6,7 @@
 #Content
 -------------------------->
 
+
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -18,60 +19,49 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]--><header class="main-header text-align--center">
+        <![endif]-->
+<header class="main-header text-align--center">
     <a href="index.html"><img class="image--small" src="img/logo@2x.png" alt=""></a>
 
   <div class="cart-summary">
     Cart <span>1</span>
   </div>
-</header><div class="main-content">
+</header>
+<div class="main-content">
   <header class="cart__header">
-    <a href="index.html">< Back</a>
+    <a href="address-card-only.html">< Back</a>
     <h2>Checkout</h2>
   </header><!-- end cart header -->
 
- <ol class="list list--inline progress-bar">
-  <li class="list__item list__item--inline ">1. Address Details</li>
-  <li class="list__item list__item--inline ">2. Shipping</li>
-  <li class="list__item list__item--inline progress-bar--active">3. Payment</li>
+<ol class="list list--inline progress-bar">
+  <li class="list__item list__item--inline nil ">1. Address Details</li>
+  <li class="list__item list__item--inline progress-bar--active">2. Shipping</li>
+  <li class="list__item list__item--inline ">3. Payment</li>
   <li class="list__item list__item--inline ">4. Review</li>
 </ol><!-- end progress bar -->
-  <div class="drop-in">
-    <div class="dropdown dropdown--payment">
-      <div class="dropdown__default" id="paymentDropdown">
-        Choose Payment Method
+  <form action="" class="form form--basic">
+    <fieldset>
+      <label class="form__label" for="drone">
+            <input type="radio" name="shipping" id="drone" checked/> 1 hour shipping by drone ($40.00)
+          </label>
+      <label class="form__label" for="standard">
+        <input type="radio" name="shipping" id="standard"/> 4 hour standard delivery (Free)
+      </label>
+    </fieldset>
 
-        <img class="arrow" src="img/icon__arrow@2x.png" />
-      </div>
+  </form>
 
-      <div class="dropdown__option-container hide">
-
-        <a href="payment-paypal.html" class="dropdown__option dropdown__option--divider">
-          <label class="dropdown__label" for="">PayPal</label>
-
-          <img class="dropdown__image" src="img/PayPalButtonBlue.png" alt="">
-        </a>
-        <a href="payment-card.html" class="dropdown__option">
-          <label class="dropdown__label" for="">Card</label>
-
-          <img class="dropdown__image" src="img/card-logos@2x.png" alt="">
-        </a>
-      </div>
-    </div><!-- end dropdown -->
-  </div><!-- end dropin -->
-
-  <button class="button button--disabled">
-    <a href="#">Continue</a>
+  <button class="button button--main">
+    <a href="payment-card-only.html">Continue</a>
   </button>
 
-</div>
 
+</div>
         <footer class="main-footer">
         &copy; 1999 Pizza Warehouse
         </footer>
@@ -84,7 +74,7 @@
         <!-- Load Hosted Fields component. -->
         <script src="https://js.braintreegateway.com/web/3.0.0-beta.9/js/hosted-fields.min.js"></script>
 
+        <script src="js/drop-in.js"></script>
         <script src="js/main.js"></script>
-
     </body>
 </html>

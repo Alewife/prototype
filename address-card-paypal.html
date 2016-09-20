@@ -34,7 +34,7 @@
 </header>
 <div class="main-content">
   <header class="cart__header">
-    <a href="login.html">< Back</a>
+    <a href="cart--shawarma.html">< Back</a>
     <h2>Checkout</h2>
   </header><!-- end cart header -->
 
@@ -44,19 +44,24 @@
   <li class="list__item list__item--inline ">3. Payment</li>
   <li class="list__item list__item--inline ">4. Review</li>
 </ol><!-- end progress bar -->
-<form action="" class="form form--basic form--address">
+<form action="" class="form form--basic">
   <fieldset>
-    <label class="form__label">Name<input class="form__fields" type="text" value="Jessie McTester"></label>
+    <label class="form__label">First Name<input class="form__fields" type="text"></label>
+    <label class="form__label">Last Name<input class="form__fields" type="text"></label>
   </fieldset>
 
   <fieldset>
-    <label class="form__label">Address<input class="form__fields" type="text" value="111 Yellowbrick Road"></label>
+    <label class="form__label">Email<input class="form__fields" type="email"></label>
+  </fieldset>
 
-    <label class="form__label">City<input class="form__fields" type="text" value="Anytown"></label>
+  <fieldset>
+    <label class="form__label">Address<input class="form__fields" type="text"></label>
+
+    <label class="form__label">City<input class="form__fields" type="text"></label>
 
     <label class="form__label" for="">State/Province
         <select class="form__fields">
-        <option value="">Select State</option>
+        <option value="" selected>Select State</option>
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
           <option value="AZ">Arizona</option>
@@ -73,7 +78,7 @@
           <option value="IL">Illinois</option>
           <option value="IN">Indiana</option>
           <option value="IA">Iowa</option>
-          <option value="KS" selected>Kansas</option>
+          <option value="KS">Kansas</option>
           <option value="KY">Kentucky</option>
           <option value="LA">Louisiana</option>
           <option value="ME">Maine</option>
@@ -111,12 +116,12 @@
         </select>
     </label>
 
-    <label class="form__label">Zipcode<input class="form__fields" type="tel" value="55555"></label>
+    <label class="form__label">Zipcode<input class="form__fields" type="tel"></label>
   </fieldset>
 </form>
 
 <button class="button button--main">
-    <a href="shipping-loggedin.html">Continue</a>
+    <a href="shipping-card-paypal.html">Continue</a>
   </button>
 
 
