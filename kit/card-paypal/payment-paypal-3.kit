@@ -1,0 +1,184 @@
+<!------------------------
+#Variables
+-------------------------->
+<!-- $progress-bar--1: nil -->
+<!-- $progress-bar--2: nil -->
+<!-- $progress-bar--3: progress-bar--active -->
+<!-- $progress-bar--4: nil -->
+
+<!------------------------
+#Content
+-------------------------->
+
+<!-- @import "../header.kit" -->
+<!-- @import "../nav.kit" -->
+<div class="main-content black50">
+  <header class="cart__header">
+    <a href="index.html">< Back</a>
+    <h2>Checkout</h2>
+  </header><!-- end cart header -->
+
+<!-- @import "../progress-bar.kit" -->
+<div class="flex">
+  <div class="table left--40 padding-all">
+    <h3 class="margin-">Summary</h3>
+    <div class="table__row">
+      <div class="table__item left">Peppers and Olives</div>
+      <div class="table__item right text-align--right">$20.00</div>
+    </div>
+    <div class="table__row">
+      <div class="table__item left">Tax</div>
+      <div class="table__item right text-align--right">$2.00</div>
+    </div>
+    <div class="table__row">
+      <div class="table__item left">Shipping (Drone)</div>
+      <div class="table__item right text-align--right">$40.00</div>
+    </div>
+    <div class="table__row table__row--footer">
+      <div class="table__item left"><strong>Total</strong></div>
+      <div class="table__item right text-align--right"><strong>$62.00</strong></div>
+    </div>
+  </div>
+  <div class="drop-in right--60 padding-all">
+
+    <!-- $ppImageUrl = img/PayPalButtonBlue.png -->
+    <!-- @import "../svg-sprite.kit" -->
+
+    <div id="braintreeDropIn" class="braintree-drop-in">
+    <div id="braintreeDropdown" class="braintree-dropdown braintree-dropdown--payment">
+        <div id="braintreePaymentSelect" class="braintree-dropdown__option--default__container">
+            <a id="dropdownDefault" class="braintree-dropdown__option--default">
+                <!-- <div id="dropdownText" class="braintree-dropdown__option--default__text">Choose a payment method</div> -->
+
+                <svg height="28" width="48" class="braintree-icon">
+                    <use xlink:href="#logoPayPal"></use>
+                </svg>
+                <dl class="braintree-list--definition">
+                    <dt class="braintree-list__term">jesse@testing.com</dt>
+                    <dd class="braintree-list__desc">PayPal</dd>
+                </dl>
+
+                <svg height="24" width="24" id="braintreeArrow" class="braintree-icon--arrow">
+                    <use xlink:href="#iconArrow"></use>
+                </svg>
+            </a>
+        </div>
+
+        <div id="braintreePaymentOptions" class="braintree-dropdown__option--container braintree-hide">
+            <h2 class="braintree-dropdown__category">Saved Payment Methods</h2>
+
+
+            <a class="braintree-dropdown__option braintree-dropdown__option--vaulted braintree-dropdown__option--divider">
+                <svg height="28" width="48" class="braintree-icon">
+                    <use xlink:href="#logoPayPal"></use>
+                </svg>
+                <dl class="braintree-list--definition">
+                    <dt class="braintree-list__term">jesse@testing.com</dt>
+                    <dd class="braintree-list__desc">PayPal</dd>
+                </dl>
+
+                <svg height="24" width="24" class="braintree-icon--check">
+                    <use xlink:href="#iconCheck"></use>
+                </svg>
+            </a>
+
+            <h2 class="braintree-dropdown__category">Add Another Payment Method</h2>
+
+            <a href="payment-paypal.html" class="braintree-dropdown__option braintree-dropdown__option--divider">
+                <label class="braintree-dropdown__label" for="">PayPal</label>
+                <div class="braintree-dropdown__image braintree-dropdown__image--padding">
+                    <img class="image--PayPal-button" src="<!--$ppImageUrl-->" alt="">
+                </div>
+
+            </a>
+            <a id="addCardPayment" class="braintree-dropdown__option">
+                <label class="braintree-dropdown__label" for="">Card</label>
+                <div class="braintree-dropdown__image braintree-dropdown__image--padding">
+                    <svg height="28" width="48" class="braintree-icon">
+                        <use xlink:href="#icon-visa"></use>
+                    </svg>
+                    <svg height="28" width="48" class="braintree-icon">
+                        <use xlink:href="#icon-master-card"></use>
+                    </svg>
+                    <svg height="28" width="48" class="braintree-icon">
+                        <use xlink:href="#icon-unionpay"></use>
+                    </svg>
+                    <svg height="28" width="48" class="braintree-icon">
+                        <use xlink:href="#icon-american-express"></use>
+                    </svg>
+                    <svg height="28" width="48" class="braintree-icon">
+                        <use xlink:href="#icon-jcb"></use>
+                    </svg>
+                    <svg height="28" width="48" class="braintree-icon">
+                        <use xlink:href="#icon-diners-club"></use>
+                    </svg>
+                    <svg height="28" width="48" class="braintree-icon">
+                        <use xlink:href="#icon-discover"></use>
+                    </svg>
+                    <svg height="28" width="48" class="braintree-icon">
+                        <use xlink:href="#icon-maestro"></use>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+  </div>
+    <!-- end braintree-dropdown -->
+
+    <script>
+    // Main Containers
+    var braintreeContainerMain = document.getElementById('braintreeContainerMain');
+    var braintreeDropIn = document.getElementById('braintreeDropIn');
+
+    // Dropdown Elements
+    var dropdownDefault = document.getElementById('dropdownDefault')
+    var dropdownText = document.getElementById('dropdownText');
+    var vaultedMethod = document.getElementById('vaultedMethod');
+    var vaultedMethodIcon = document.getElementById('vaultedMethodIcon');
+    var dropdown = document.getElementById('braintreeDropdown');
+    var braintreePaymentSelect = document.getElementById('braintreePaymentSelect');
+    var dropdownOptions = document.getElementById('braintreePaymentOptions');
+    var dropdownArrow = document.getElementById('braintreeArrow');
+
+    // Form Variables
+    var cardLogos = document.getElementById('cardLogos');
+    var cardForm = document.getElementById('cardForm');
+    var buttonUseCard = document.getElementById('buttonUseCard');
+    var addCardPayment = document.getElementById('addCardPayment');
+    var cardNumberIcon = document.querySelector('#cardNumberIcon');
+    var cvvIcon = document.querySelector('#cvvIcon');
+
+    // Loader
+    var loadingContainer = document.getElementById('loadingContainer');
+    var loadingIndicator = document.getElementById('loadingIndicator');
+
+    window.addEventListener('click', function() {
+        dropdownOptions.classList.add('braintree-hide');
+        dropdownDefault.classList.remove('braintree-desaturate');
+        dropdownArrow.classList.remove('braintree-arrow--active');
+        braintreePaymentSelect.classList.remove('braintree-dropdown__option--default--active');
+    });
+
+    // Toggles state of select and shows/hides options
+    braintreePaymentSelect.addEventListener('click', function() {
+        dropdownDefault.classList.toggle('braintree-desaturate');
+        dropdownArrow.classList.toggle('braintree-arrow--active');
+        braintreePaymentSelect.classList.toggle('braintree-dropdown__option--default--active');
+        dropdownOptions.classList.toggle('braintree-hide');
+    });
+
+    dropdown.addEventListener('click', function(event) {
+        // stop listening to the window class event
+        event.stopPropagation();
+    });
+    </script>
+
+  </div><!-- end dropin -->
+</div>
+  <button class="button button--main">
+    <a href="review-paypal.html">Continue</a>
+  </button>
+
+</div><!-- end main content -->
+
+<!-- @import "../footer.kit" -->

@@ -1,0 +1,80 @@
+<!------------------------
+#Variables
+-------------------------->
+
+<!------------------------
+#Content
+-------------------------->
+
+
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+<header class="main-header text-align--center">
+    <a href="index.html"><img class="image--small" src="img/logo@2x.png" alt=""></a>
+
+  <div class="cart-summary">
+    Cart <span>1</span>
+  </div>
+</header>
+<div class="main-content">
+  <header class="cart__header">
+    <a href="address-multiple.html">< Back</a>
+    <h2>Checkout</h2>
+  </header><!-- end cart header -->
+
+<ol class="list list--inline progress-bar">
+  <li class="list__item list__item--inline nil ">1. Address Details</li>
+  <li class="list__item list__item--inline progress-bar--active">2. Shipping</li>
+  <li class="list__item list__item--inline ">3. Payment</li>
+  <li class="list__item list__item--inline ">4. Review</li>
+</ol><!-- end progress bar -->
+  <form action="" class="form form--basic">
+    <fieldset id="shippingRadio">
+      <label class="form__label" for="drone"  id="droneMultiple" >
+            <input type="radio" name="shipping" checked="checked"/> 1 hour shipping by drone ($40.00)
+          </label>
+      <label class="form__label" for="standard" id="standardMultiple">
+        <input type="radio" name="shipping" /> 4 hour standard delivery (Free)
+      </label>
+    </fieldset>
+
+  </form>
+
+  <button class="button button--main">
+    <a id="multipleContinue" href="payment-multiple.html">Continue</a>
+  </button>
+
+
+</div>
+        <footer class="main-footer">
+        &copy; 1999 Pizza Warehouse
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
+        <!-- Load the required client component. -->
+        <script src="https://js.braintreegateway.com/web/3.0.0-beta.9/js/client.min.js"></script>
+
+        <!-- Load Hosted Fields component. -->
+        <script src="https://js.braintreegateway.com/web/3.0.0-beta.9/js/hosted-fields.min.js"></script>
+
+        <script src="js/drop-in.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

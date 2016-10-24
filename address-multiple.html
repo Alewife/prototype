@@ -1,0 +1,144 @@
+<!------------------------
+#Variables
+-------------------------->
+
+<!------------------------
+#Content
+-------------------------->
+
+
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+<header class="main-header text-align--center">
+    <a href="index.html"><img class="image--small" src="img/logo@2x.png" alt=""></a>
+
+  <div class="cart-summary">
+    Cart <span>1</span>
+  </div>
+</header>
+<div class="main-content">
+  <header class="cart__header">
+    <a href="cart--fourway.html">< Back</a>
+    <h2>Checkout</h2>
+  </header><!-- end cart header -->
+
+<ol class="list list--inline progress-bar">
+  <li class="list__item list__item--inline progress-bar--active ">1. Address Details</li>
+  <li class="list__item list__item--inline ">2. Shipping</li>
+  <li class="list__item list__item--inline ">3. Payment</li>
+  <li class="list__item list__item--inline ">4. Review</li>
+</ol><!-- end progress bar -->
+<form action="" class="form form--basic">
+  <fieldset>
+    <label class="form__label">First Name<input class="form__fields" type="text"></label>
+    <label class="form__label">Last Name<input class="form__fields" type="text"></label>
+  </fieldset>
+
+  <fieldset>
+    <label class="form__label">Email<input class="form__fields" type="email"></label>
+  </fieldset>
+
+  <fieldset>
+    <label class="form__label">Address<input class="form__fields" type="text"></label>
+
+    <label class="form__label">City<input class="form__fields" type="text"></label>
+
+    <label class="form__label" for="">State/Province
+        <select class="form__fields">
+        <option value="" selected>Select State</option>
+          <option value="AL">Alabama</option>
+          <option value="AK">Alaska</option>
+          <option value="AZ">Arizona</option>
+          <option value="AR">Arkansas</option>
+          <option value="CA">California</option>
+          <option value="CO">Colorado</option>
+          <option value="CT">Connecticut</option>
+          <option value="DE">Delaware</option>
+          <option value="DC">District Of Columbia</option>
+          <option value="FL">Florida</option>
+          <option value="GA">Georgia</option>
+          <option value="HI">Hawaii</option>
+          <option value="ID">Idaho</option>
+          <option value="IL">Illinois</option>
+          <option value="IN">Indiana</option>
+          <option value="IA">Iowa</option>
+          <option value="KS">Kansas</option>
+          <option value="KY">Kentucky</option>
+          <option value="LA">Louisiana</option>
+          <option value="ME">Maine</option>
+          <option value="MD">Maryland</option>
+          <option value="MA">Massachusetts</option>
+          <option value="MI">Michigan</option>
+          <option value="MN">Minnesota</option>
+          <option value="MS">Mississippi</option>
+          <option value="MO">Missouri</option>
+          <option value="MT">Montana</option>
+          <option value="NE">Nebraska</option>
+          <option value="NV">Nevada</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NM">New Mexico</option>
+          <option value="NY">New York</option>
+          <option value="NC">North Carolina</option>
+          <option value="ND">North Dakota</option>
+          <option value="OH">Ohio</option>
+          <option value="OK">Oklahoma</option>
+          <option value="OR">Oregon</option>
+          <option value="PA">Pennsylvania</option>
+          <option value="RI">Rhode Island</option>
+          <option value="SC">South Carolina</option>
+          <option value="SD">South Dakota</option>
+          <option value="TN">Tennessee</option>
+          <option value="TX">Texas</option>
+          <option value="UT">Utah</option>
+          <option value="VT">Vermont</option>
+          <option value="VA">Virginia</option>
+          <option value="WA">Washington</option>
+          <option value="WV">West Virginia</option>
+          <option value="WI">Wisconsin</option>
+          <option value="WY">Wyoming</option>
+        </select>
+    </label>
+
+    <label class="form__label">Zipcode<input class="form__fields" type="tel"></label>
+  </fieldset>
+</form>
+
+<button class="button button--main">
+    <a href="shipping-multiple.html">Continue</a>
+  </button>
+
+
+</div>
+        <footer class="main-footer">
+        &copy; 1999 Pizza Warehouse
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
+        <!-- Load the required client component. -->
+        <script src="https://js.braintreegateway.com/web/3.0.0-beta.9/js/client.min.js"></script>
+
+        <!-- Load Hosted Fields component. -->
+        <script src="https://js.braintreegateway.com/web/3.0.0-beta.9/js/hosted-fields.min.js"></script>
+
+        <script src="js/drop-in.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,915 @@
+/*------------------------------------*\
+  #SETTINGS
+\*------------------------------------*/
+$green: #27AE60;
+$black: #000000;
+$white: #FFFFFF;
+$red: #CC0000;
+$type-12: 12px;
+$type-14: 14px;
+$type-16: 16px;
+$black-60: lighten($black, 60%);
+$black-40: lighten($black, 40%);
+$black-75: lighten($black, 75%);
+$black-85: lighten($black, 85%);
+$black-90: lighten($black, 90%);
+$black-95: lighten($black, 95%);
+$black-97: lighten($black, 97%);
+$black-98: lighten($black, 98%);
+$time-fast: 200ms;
+$time-faster: 100ms;
+$curve-swing: cubic-bezier(0.645, 0.045, 0.355, 1);
+$curve-springy: cubic-bezier(0.43, 0.48, 0.62, 1.07);
+
+/*------------------------------------*\
+  #MIXINS
+\*------------------------------------*/
+
+@mixin placeholder {
+   ::-webkit-input-placeholder {
+    @content
+  }
+   :-moz-placeholder {
+    @content
+  }
+   ::-moz-placeholder {
+    @content
+  }
+   :-ms-input-placeholder {
+    @content
+  }
+}
+
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+#braintreeDropIn * {
+  box-sizing: border-box;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.image--PayPal-button {
+  width: 144px;
+  height: 42px;
+  cursor: pointer;
+}
+
+.braintree-drop-in {
+  position: relative;
+
+  min-width: 290px;
+  height: 287px;
+  margin: 0;
+  padding: 0;
+
+  transition: height $time-fast ease;
+
+  background: #FFFFFF;
+}
+
+.braintree-icon {
+  display: inline-block;
+
+  width: 44px;
+  height: 24px;
+
+  transition: opacity $time-fast ease, transform $time-fast ease;
+}
+
+.braintree-icon--ideal {
+  width: 55px;
+  height: 35px;
+}
+
+.braintree-icon--applepay {
+  width: 112px;
+  height: 35px;
+}
+
+.braintree-icon--androidpay {
+  width: 95px;
+  height: 35px;
+}
+
+.braintree-icon--visacheckout {
+  width: 129px;
+  height: 30px;
+}
+
+.braintree-icon--masterpass {
+  width: 129px;
+  height: 30px;
+}
+
+
+/*------------------------------------*\
+  #LOADER
+\*------------------------------------*/
+
+.braintree-loading-container {
+  position: absolute;
+  z-index: 2;
+
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  transition: opacity 500ms ease;
+
+  opacity: 1;
+  background: $white;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.braintree-loading-indicator {
+  position: relative;
+
+  width: 72px;
+  height: 72px;
+
+  transition: transform 300ms $curve-springy;
+
+  border: solid 2px $black-75;
+  border-radius: 50%;
+  &:before {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    margin-top: -2px;
+    margin-left: -2px;
+
+    content: '';
+    animation: rotate 512ms infinite $curve-swing;
+
+    border: solid 2px transparent;
+    border-top-color: $black-40;
+    border-radius: 50%;
+  }
+}
+
+.braintree-icon--lock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin-top: -9px;
+  margin-left: -7px;
+
+  fill: $black-40;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/*------------------------------------*\
+  #LISTS
+\*------------------------------------*/
+
+.braintree-list--definition {
+  display: inline-block;
+
+  margin: 0;
+  padding: 4px 12px;
+
+  transition: opacity $time-fast ease, transform $time-fast ease;
+  text-align: left;
+
+  line-height: 1.4;
+
+  flex-grow: 2;
+}
+
+.braintree-list__term {
+  margin: 0 0 3px;
+  padding: 0;
+
+  color: $black;
+
+  font-size: $type-16;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.braintree-list__desc {
+  margin: 0;
+  padding: 0;
+
+  color: $black-40;
+
+  font-size: $type-14;
+  line-height: 1.4;
+}
+
+
+/*------------------------------------*\
+  #DROPDOWN
+\*------------------------------------*/
+
+.braintree-container--main {
+  transition: all 1000 ease;
+
+  opacity: 0;
+}
+
+.braintree-dropdown {
+  position: relative;
+}
+
+.braintree-dropdown__option--default__container {
+  border: 1px solid $black-85;
+  border-radius: 3px;
+  background: $black-95;
+  background-image: linear-gradient(-180deg, $black-95 0%, $black-90 100%);
+}
+
+.braintree-dropdown__option--default {
+  display: flex;
+
+  width: 100%;
+  margin: 0;
+  padding: 8px 16px 8px 12px;
+
+  cursor: pointer;
+  transition: all $time-fast;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.braintree-dropdown__option--default__text {
+  margin: 0;
+  padding: 8px 0;
+
+  text-align: left;
+  text-transform: none;
+
+  color: $black;
+
+  font-size: $type-16;
+  font-weight: bold;
+}
+
+.braintree-dropdown__option--default--active {
+  border-radius: 3px 3px 0 0;
+  background: $black-97;
+  background-image: linear-gradient(-180deg, $black-90 0%, $black-95 100%);
+}
+
+.braintree-icon--arrow {
+  width: 20px;
+  height: 20px;
+
+  transition: transform 100ms ease-in-out;
+  transform: rotate(0deg);
+
+  color: $black;
+  &.braintree-arrow--active {
+    transition: transform 100ms ease-in-out;
+    transform: rotate(180deg);
+  }
+}
+
+.braintree-icon--check {
+  display: inline-block;
+
+  width: 20px;
+  height: 20px;
+
+  color: $black;
+
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 0;
+}
+
+.braintree-dropdown__option--container {
+  position: absolute;
+  z-index: 2147483646; // highest z-index!
+
+  width: 100%;
+
+  transition: all $time-fast;
+  transition: opacity $time-faster linear;
+
+  border: 1px solid $black-85;
+  border-top: 0;
+  border-radius: 0 0 3px 3px;
+  background: $white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.braintree-dropdown__option {
+  display: flex;
+
+  width: 100%;
+  padding: 8px 16px 8px 12px;
+
+  transition: background $time-faster ease-in-out;
+  text-decoration: none;
+
+  color: $black;
+
+  font-size: $type-16;
+  line-height: 1.4;
+
+  align-items: center;
+  justify-content: flex-start;
+  &:hover {
+    background: $black-95;
+  }
+  &:active {
+    background: $black-97;
+  }
+}
+
+//try it stuff clean
+.braintree-dropdown__option-clean {
+  display: flex;
+  flex-direction: row-reverse;
+
+  width: 100%;
+  padding: 8px 16px 8px 12px;
+
+  transition: background $time-faster ease-in-out;
+  text-decoration: none;
+
+  color: $black;
+
+  font-size: $type-16;
+  line-height: 1.4;
+
+  align-items: center;
+  justify-content: flex-end;
+  &:hover {
+    background: $black-95;
+  }
+  &:active {
+    background: $black-97;
+  }
+}
+
+.braintree-icon--clean {
+  width: 55px;
+  height: 31px;
+}
+
+.braintree-dropdown__image-clean {
+  display: flex;
+
+  flex-basis: 20%;
+  justify-content: center;
+}
+
+.braintree-dropdown__label-clean {
+  display: flex;
+
+  margin-left: 10px;
+
+  justify-content: flex-start;
+}
+
+.button-clean {
+  padding-top: 20px;
+
+  text-align: center;
+  img {
+    width: 40%;
+  }
+}
+
+// back to regularly scheduled scss
+.braintree-dropdown__option--divider {
+  border-bottom: 1px solid $black-85;
+}
+
+.braintree-dropdown__option--vaulted {
+  justify-content: flex-start;
+}
+
+.braintree-dropdown__image {
+  display: flex;
+
+  flex-basis: 60%;
+  flex-grow: 2;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.braintree-dropdown__image--padding {
+  padding: 8px 0;
+}
+
+#braintreeDropIn .braintree-dropdown__category {
+  margin: 0;
+  padding: 8px;
+
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: $black-40;
+  background: $black-90;
+
+  font-size: $type-12;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+#braintreeDropIn .braintree-dropdown__label {
+  display: flex;
+
+  margin-bottom: 0;
+  padding-left: 20px;
+
+  color: $black;
+
+  font-size: $type-16;
+  font-weight: normal;
+
+  flex-basis: 40%;
+  flex-grow: 1;
+}
+
+
+/* -----------------------------------*\
+  # EXPOSED (The upside down)
+\*------------------------------------*/
+
+.braintree-exposed__heading {
+  margin-bottom: 15px;
+
+  font-weight: 500;
+}
+
+.braintree-exposed__option {
+  text-decoration: none;
+
+  color: inherit;
+  border: 1px solid #C5C5C5;
+  background: #FAFAFA;
+
+  &.option--is-open.option--is-saved {
+    border: 2px solid $green;
+
+    &:nth-child(1) {
+      border-bottom: 2px solid $green;
+    }
+
+    .braintree-exposed__content {
+      display: none;
+    }
+  }
+
+  * {
+    transition:      all 0.2s ease;
+  }
+
+  .braintree-exposed__header {
+    display: flex;
+
+    padding: 12px 10px;
+
+    cursor: pointer;
+
+    align-items: center;
+  }
+  .braintree-exposed__saved {
+    padding: 12px 10px;
+
+    .braintree-exposed__saved__icon {
+      width: 20px;
+      margin-right: 15px;
+
+      fill: $green;
+    }
+  }
+  .braintree-exposed__content {
+    margin: 0 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    text-align: center;
+
+    border-top: 1px solid #e0e0e0;
+
+    .braintree-form {
+      text-align: left;
+
+      .braintree-form__label--relative {
+        display: block;
+
+        width: 100%;
+      }
+
+      .braintree-form__descriptor {
+        float: right;
+
+        color: #C5C5C5;
+
+        font-size: 14px;
+      }
+
+      .flex .braintree-form__fieldset {
+        width: 48%;
+      }
+    }
+  }
+  &.option--is-closed {
+    .braintree-exposed__content {
+      visibility: hidden;
+      overflow: hidden;
+
+      height: 0;
+      margin: 0;
+      padding: 0;
+
+      transition: all $time-faster linear;
+
+      opacity: 0;
+    }
+  }
+  &.option--is-hidden {
+    display: none;
+  }
+  &.option--is-open {
+    &:first-child {
+      border-bottom: 1px solid #C5C5C5;
+    }
+    &:last-child {
+      border-top: 1px solid #c5c5c5;
+    }
+    .braintree-exposed__header {
+      cursor: default;
+    }
+  }
+  &:first-child {
+    border-bottom: 0;
+  }
+  &:last-child {
+    border-top: 0;
+  }
+  &:nth-child(2) {
+    border-top: 1px solid #C5C5C5;
+  }
+  .braintree-exposed__label {
+    margin-left: 16px;
+  }
+}
+
+.braintree-additional-options {
+  margin-top: 13px;
+  padding: 18px;
+
+  cursor: pointer;
+  text-align: center;
+
+  border: 1px solid #C5C5C5;
+  border-radius: 5px;
+  background: #FAFAFA;
+
+  font-size: 14px;
+
+  .braintree-additional-options-icons {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+
+/*------------------------------------*\
+  # CREDIT CARD FORM
+\*------------------------------------*/
+
+.braintree-card-logos__group {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  transition: all 200ms ease;
+  text-align: center;
+}
+
+.braintree-form {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  transition: transform $time-fast ease-in-out, opacity $time-fast linear, height $time-fast ease;
+}
+
+.braintree-form__fieldset {
+  margin: 0 0 16px;
+  padding: 0;
+
+  border: 0;
+}
+
+#braintreeDropIn .braintree-form__label {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  text-align: left;
+
+  color: $black;
+
+  font-size: $type-16;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.braintree-form__label--relative {
+  position: relative;
+}
+
+.braintree-form__inline-error {
+  display: none;
+
+  margin: 0;
+  padding: 0;
+
+  text-align: left;
+
+  color: $red;
+
+  font-size: $type-14;
+  line-height: 1.4;
+}
+
+.braintree-form__fields {
+  margin: 4px 0 0;
+  padding: 8px;
+
+  border: 1px solid $black-75;
+  background: $white;
+}
+
+.braintree-form__fields--hosted {
+  height: 44px;
+}
+
+.braintree-form__icon--absolute {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+
+  transition: opacity $time-faster linear;
+}
+
+.braintree-form__button {
+  padding: 14px 20px;
+
+  border: 1px solid $black-85;
+  border-radius: 3px;
+  background: $black-90;
+  background-image: linear-gradient(-180deg, $black-95 0%, $black-85 100%);
+
+  font-size: $type-16;
+  &:hover {
+    background: $black-75;
+    background-image: linear-gradient(-180deg, $black-85 0%, $black-75 100%);
+  }
+  &:active {
+    background: $black-95;
+    background-image: linear-gradient(-180deg, $black-90 0%, $black-95 100%);
+  }
+}
+
+@include placeholder {
+  color: $black-75;
+}
+
+
+/*------------------------------------*\
+  #HOSTED FIELDS SPECIFIC
+\*------------------------------------*/
+
+.braintree-hosted-fields-focused {
+  background: $black-98;
+}
+
+.braintree-hosted-fields-invalid {
+  border: 1px solid $red;
+}
+
+
+/*------------------------------------*\
+  #ALERTS
+\*------------------------------------*/
+
+.braintree-alert {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 12px 10px;
+
+  text-align: left;
+
+  font-size: $type-14;
+  line-height: 1.4;
+}
+
+.braintree-alert--error {
+  display: none;
+
+  color: $red;
+  border: 1px solid $red;
+  background: lighten($red, 55%);
+}
+
+.braintree-alert__link {
+  color: $red;
+}
+
+
+/*------------------------------------*\
+  #TOOLS
+\*------------------------------------*/
+
+.braintree-hide,
+*[class^='braintree'].braintree-hide,
+*[class*=' braintree'].braintree-hide {
+  visibility: hidden;
+  overflow: hidden;
+
+  height: 0;
+  margin: 0;
+  padding: 0;
+
+  transition: all $time-faster linear;
+
+  opacity: 0;
+}
+
+.other-type-of-hide {
+  visibility: hidden;
+
+  opacity: 0;
+}
+
+.braintree-hide-width {
+  visibility: hidden;
+
+  width: 0;
+
+  opacity: 0;
+}
+
+.braintree-desaturate {
+  transition: filter $time-faster;
+
+  opacity: 0.6;
+
+  -webkit-filter: grayscale(1);
+  /* Google Chrome, Safari 6+ & Opera 15+ */
+  filter: gray;
+  /* IE6-9 */
+  filter: grayscale(1);
+  /* Microsoft Edge and Firefox 35+ */
+}
+
+.braintree-display--none {
+  display: none;
+}
+
+.braintree-animate-down {
+  transition: opacity $time-fast ease, transform $time-fast ease;
+  transform: translateY(10px);
+
+  opacity: 0;
+}
+
+.braintree-animate-up {
+  position: relative;
+  z-index: -1;
+
+  margin: 0;
+
+  transition: opacity $time-fast ease, transform $time-fast ease;
+  transform: translateY(-50px);
+
+  opacity: 0;
+}
+
+
+/*------------------------------------*\
+  #MEDIA QUERIES
+\*------------------------------------*/
+
+@media (max-width: 620px) {
+  .braintree-form__label {
+    font-size: $type-14;
+  }
+  .braintree-dropdown__option {
+    justify-content: space-between;
+  }
+  .image--PayPal-button {
+    width: 140px;
+  }
+  .braintree-dropdown__image {
+    text-align: right;
+  }
+}
+
+
+/*------------------------------------*\
+  #IE Styles
+\*------------------------------------*/
+
+.browser-upgrade {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.ieno-flexbox {
+  img {
+    border: 0;
+  }
+  .braintree-card-logos__group {
+    display: block;
+
+    text-align: center;
+    .braintree-icon {
+      float: none;
+
+      margin-top: 0;
+    }
+  }
+  .braintree-card-logos__group:after {
+    display: table;
+    clear: both;
+
+    content: '';
+  }
+  .braintree-dropdown__option--default__container {
+    display: block;
+
+    padding-top: 16px;
+  }
+  .braintree-dropdown__option--default__container:after {
+    display: table;
+    clear: both;
+
+    content: '';
+  }
+  .braintree-icon {
+    float: left;
+
+    margin-top: 10px;
+  }
+  .braintree-list--definition {
+    float: left;
+
+    padding-top: 0;
+  }
+  .braintree-icon--arrow,
+  .braintree-icon--check {
+    float: right;
+
+    margin-top: 10px;
+  }
+  .braintree-dropdown__option {
+    display: block;
+    clear: both;
+
+    padding-top: 16px;
+
+    text-decoration: none;
+  }
+  .braintree-dropdown__option:after {
+    display: table;
+    clear: both;
+
+    content: '';
+  }
+  .braintree-dropdown__label {
+    float: left;
+
+    padding-top: 10px;
+  }
+  .braintree-dropdown__image {
+    float: left;
+  }
+}
+
+#applePaySheet {
+  display: none;
+}

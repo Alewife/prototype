@@ -1,0 +1,68 @@
+<!------------------------
+#Variables
+-------------------------->
+<!-- $progress-bar--1: nil  -->
+<!-- $progress-bar--2: nil -->
+<!-- $progress-bar--3: nil-->
+<!-- $progress-bar--4: progress-bar--active -->
+
+<!------------------------
+#Content
+-------------------------->
+
+<!-- @import "../header.kit" -->
+<!-- @import "../nav.kit" -->
+<div class="main-content">
+  <header class="cart__header">
+    <a href="payment-paypal-3.html">< Back</a>
+    <h2>Checkout</h2>
+  </header><!-- end cart header -->
+
+<!-- @import "../progress-bar.kit" -->
+
+  <div class="review__information">
+    <h3 class="review__header">Address</h3>
+    <label class="review__label">Name</label><p>Jesse McTester</p>
+    <label class="review__label">Address</label><p>111 Yellowbrick Road</p>
+    <label class="review__label">City, State, Zipcode</label><p>Anytown, KS 55555</p>
+
+    <h3 class="review__header">Payment</h3>
+
+    <div class="dropdown__option dropdown__option--alternate relative">
+
+      <!-- <img class="dropdown__image dropdown__image--small" src="img/logo__PayPal@2x.png" alt=""> -->
+
+      <dl class="list--definition flex-large">
+        <dt class="list__term">jesse@testing.com</dt>
+        <dd class="list__desc">PayPal</dd>
+      </dl>
+    </div>
+
+    <h3 class="review__header">Summary</h3>
+    <div class="table">
+      <div class="table__row">
+        <div class="table__item left">Peppers and Olives</div>
+        <div class="table__item right text-align--right">$20.00</div>
+      </div>
+      <div class="table__row">
+        <div class="table__item left">Tax</div>
+        <div class="table__item right text-align--right">$2.00</div>
+      </div>
+      <div class="table__row">
+        <div class="table__item left">Shipping (Drone)</div>
+        <div class="table__item right text-align--right">$40.00</div>
+      </div>
+      <div class="table__row table__row--footer">
+        <div class="table__item left"><strong>Total</strong></div>
+        <div class="table__item right text-align--right"><strong>$62.00</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <button class="button button--main">
+    <a href="confirmation.html">Place Order</a>
+  </button>
+
+</div><!-- end main content -->
+
+<!-- @import "../footer.kit" -->
