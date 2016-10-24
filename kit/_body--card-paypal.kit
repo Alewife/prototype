@@ -1,0 +1,55 @@
+<h3 class="braintree-exposed__heading">Choose a way to pay</h3>
+
+<div id="braintreePaymentOptions" class="braintree-exposed__option--container">
+
+    <div class="braintree-exposed__option option--is-closed">
+        <div class="braintree-exposed__header">
+            <svg height="28" width="48" class="braintree-icon">
+              <use xlink:href="#logoPayPal"></use>
+            </svg>
+
+            <label class="braintree-exposed__label" for="">PayPal</label>
+        </div>
+
+        <div class="braintree-exposed__content">
+            <img class="image--PayPal-button" src="<!--$ppImageUrl-->" alt="">
+        </div>
+    </div>
+
+    <div class="braintree-exposed__option option--is-closed">
+        <div class="braintree-exposed__header">
+
+            <svg height="30" width="50" class="braintree-icon">
+          <use xlink:href="#iconCardFront"></use>
+          </svg>
+
+            <label class="braintree-exposed__label" for="">Card</label>
+        </div>
+
+        <div class="braintree-exposed__content">
+            <img class="image--PayPal-button" src="<!--$ppImageUrl-->" alt="">
+        </div>
+    </div>
+</div>
+
+<script>
+  function log(element) {
+    console.log(element)
+  }
+
+  var optionHeader = document.getElementsByClassName('braintree-exposed__header');
+
+  for(i = 0; i < optionHeader.length; i++) {
+    optionHeader[i].addEventListener('click', function(){
+      var openOption = document.getElementsByClassName('braintree-exposed__option option--is-open')[0];
+  
+      if(openOption) {
+        openOption.classList.remove("option--is-open");
+        openOption.classList.add("option--is-closed");
+      }
+
+      this.parentElement.classList.remove('option--is-closed');
+      this.parentElement.classList.add('option--is-open');
+    });
+  }
+</script>

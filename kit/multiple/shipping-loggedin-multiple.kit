@@ -1,0 +1,33 @@
+<!------------------------
+#Variables
+-------------------------->
+<!-- $progress-bar--1: nil  -->
+<!-- $progress-bar--2: progress-bar--active -->
+<!-- $progress-bar--3: nil-->
+<!-- $progress-bar--4: nil -->
+<!------------------------
+#Content
+-------------------------->
+<!-- @import "../header.kit" -->
+<!-- @import "../nav.kit" -->
+<div class="main-content">
+  <header class="cart__header">
+    <a href="address-loggedin-multiple.html">< Back</a>
+    <h2>Checkout</h2>
+    </header><!-- end cart header -->
+    <!-- @import "../progress-bar.kit" -->
+    <form action="" class="form form--basic">
+      <fieldset>
+        <label class="form__label" for="drone">
+          <input type="radio" name="shipping" id="droneMultipleClean" checked="checked"/> 1 hour shipping by drone ($40.00)
+        </label>
+        <label class="form__label" for="standard">
+          <input type="radio" name="shipping" id="standardMultipleClean"/> 4 hour standard delivery (Free)
+        </label>
+      </fieldset>
+    </form>
+    <button class="button button--main">
+    <a id="multipleContinue" href="payment-vaulted-multiple.html">Continue</a>
+    </button>
+  </div>
+  <!-- @import "../footer.kit" -->

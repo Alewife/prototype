@@ -1,0 +1,82 @@
+<!------------------------
+#Variables
+-------------------------->
+<!-- $progress-bar--1: nil -->
+<!-- $progress-bar--2: nil -->
+<!-- $progress-bar--3: progress-bar--active -->
+<!-- $progress-bar--4: nil -->
+
+<!------------------------
+#Content
+-------------------------->
+<!-- @import "../header.kit" -->
+<!-- @import "../nav.kit" -->
+<div class="main-content">
+  <header class="cart__header">
+    <a href="index.html">< Back</a>
+    <h2>Checkout</h2>
+  </header><!-- end cart header -->
+
+ <!-- @import "../progress-bar.kit" -->
+
+ <div class="flex">
+  <div class="table left--40 padding-all">
+    <h3 class="margin-">Summary</h3>
+    <div class="table__row">
+      <div class="table__item left">Peppers and Olives</div>
+      <div class="table__item right text-align--right">$20.00</div>
+    </div>
+    <div class="table__row">
+      <div class="table__item left">Tax</div>
+      <div class="table__item right text-align--right">$2.00</div>
+    </div>
+    <div class="table__row">
+      <div class="table__item left">Shipping (Drone)</div>
+      <div class="table__item right text-align--right">$40.00</div>
+    </div>
+    <div class="table__row table__row--footer">
+      <div class="table__item left"><strong>Total</strong></div>
+      <div class="table__item right text-align--right"><strong>$62.00</strong></div>
+    </div>
+  </div>
+  <div class="drop-in right--60 padding-all">
+
+    <!-- $ppImageUrl = img/PayPalButtonBlue.png -->
+    <!-- @import "../svg-sprite.kit" -->
+
+    <div id="braintreePaymentSelect" class="braintree-dropdown__option--default__container">
+        <a id="dropdownDefault" class="braintree-dropdown__option--default">
+            <div id="dropdownText" class="braintree-dropdown__option--default__text">Choose a payment method</div>
+
+            <svg id="vaultedMethodIcon" height="28" width="48" class="braintree-icon braintree-hide braintree-translateY-small">
+           <use xlink:href="#icon-visa"></use>
+         </svg>
+            <dl id="vaultedMethod" class="braintree-list--definition braintree-hide braintree-translateY-small">
+                <dt class="braintree-list__term">Ending in ••35</dt>
+                <dd class="braintree-list__desc">Visa</dd>
+            </dl>
+
+            <svg height="24" width="24" id="braintreeArrow" class="braintree-icon--arrow">
+                <use xlink:href="#iconArrow"></use>
+            </svg>
+        </a>
+    </div>
+
+  </div><!-- end dropin -->
+</div>
+
+<div class="modal--paypal">
+  <img usemap="#login" class="paypal-login" src="img/paypal-login-2.png" />
+  <map name="login">
+    <area shape="rect" coords="20,460,429,505" href="payment-paypal-3.html"/>
+    <area shape="rect" coords="0,0,25,25" href="payment.html"/>
+  </map>
+</div>
+
+<button class="button button--disabled">
+  <a href="payment.html">Continue</a>
+</button>
+
+</div><!-- end main content -->
+
+<!-- @import "../footer.kit" -->

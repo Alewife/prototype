@@ -1,0 +1,206 @@
+<div id="braintreeDropIn" class="braintree-drop-in">
+    <div id="loadingContainer" class="braintree-loading-container ">
+        <div id="loadingIndicator" class="braintree-loading-indicator">
+            <svg width="14" height="16" class="braintree-icon--lock">
+           <use xlink:href="#iconLockLoader"></use>
+        </svg>
+        </div>
+    </div>
+
+    <div id="braintreeContainerMain" class="braintree-container--main">
+
+      <div id="braintreeDropdown" class="braintree-dropdown braintree-dropdown--payment">
+          <div id="braintreePaymentSelect" class="braintree-dropdown__option--default__container">
+              <a id="dropdownDefault" class="braintree-dropdown__option--default">
+                  <div id="dropdownText" class="braintree-dropdown__option--default__text">Choose a payment method</div>
+
+                  <!-- <svg height="28" width="48" class="braintree-icon">
+                      <use xlink:href="#logoPayPal"></use>
+                  </svg>
+
+                  <dl class="braintree-list--definition">
+                      <dt class="braintree-list__term">Apple</dt>
+                      <dd class="braintree-list__desc">PayPal</dd>
+                  </dl> -->
+
+                  <svg height="24" width="24" id="braintreeArrow" class="braintree-icon--arrow">
+                      <use xlink:href="#iconArrow"></use>
+                  </svg>
+              </a>
+          </div>
+
+          <div id="braintreePaymentOptions" class="braintree-dropdown__option--container braintree-hide">
+
+              <a id="applePay" class="braintree-dropdown__option braintree-dropdown__option--divider">
+                  <label class="braintree-dropdown__label" for="">ApplePay</label>
+                  <div class="braintree-dropdown__image braintree-dropdown__image--padding">
+                      <img src="img/icon__apple-pay.png" class="braintree-icon--applepay" />
+                  </div>
+              </a>
+              <a href="payment-paypal-1.html" class="braintree-dropdown__option braintree-dropdown__option--divider">
+                  <label class="braintree-dropdown__label" for="">PayPal</label>
+                  <div class="braintree-dropdown__image braintree-dropdown__image--padding">
+                      <img class="image--PayPal-button" src="<!--$ppImageUrl-->" alt="">
+                  </div>
+              </a>
+              <a id="addCardPayment" class="braintree-dropdown__option braintree-dropdown__option--divider">
+                  <label class="braintree-dropdown__label" for="">Card</label>
+                  <div class="braintree-dropdown__image braintree-dropdown__image--padding">
+                      <svg height="28" width="48" class="braintree-icon">
+                          <use xlink:href="#icon-visa"></use>
+                      </svg>
+                      <svg height="28" width="48" class="braintree-icon">
+                          <use xlink:href="#icon-master-card"></use>
+                      </svg>
+                      <svg height="28" width="48" class="braintree-icon">
+                          <use xlink:href="#icon-unionpay"></use>
+                      </svg>
+                      <svg height="28" width="48" class="braintree-icon">
+                          <use xlink:href="#icon-american-express"></use>
+                      </svg>
+                      <svg height="28" width="48" class="braintree-icon">
+                          <use xlink:href="#icon-jcb"></use>
+                      </svg>
+                      <svg height="28" width="48" class="braintree-icon">
+                          <use xlink:href="#icon-discover"></use>
+                      </svg>
+                      <svg height="28" width="48" class="braintree-icon">
+                          <use xlink:href="#icon-jcb"></use>
+                      </svg>
+                      <svg height="28" width="48" class="braintree-icon">
+                          <use xlink:href="#icon-discover"></use>
+                      </svg>
+                  </div>
+              </a>
+              <a class="braintree-dropdown__option braintree-dropdown__option--divider">
+                  <label class="braintree-dropdown__label" for="">iDEAL</label>
+                  <div class="braintree-dropdown__image braintree-dropdown__image--padding">
+                      <svg height="40" class="braintree-icon braintree-icon--ideal">
+                        <use xlink:href="#logoIdeal"></use>
+                      </svg>
+                  </div>
+              </a>
+              <a class="braintree-dropdown__option braintree-dropdown__option--divider">
+                  <label class="braintree-dropdown__label" for="">AndroidPay</label>
+                  <div class="braintree-dropdown__image braintree-dropdown__image--padding">
+                      <img src="img/icon__android-pay.png" class="braintree-icon--androidpay" />
+                  </div>
+              </a>
+              <a class="braintree-dropdown__option braintree-dropdown__option--divider">
+                  <label class="braintree-dropdown__label" for="">Visa Checkout</label>
+                  <div class="braintree-dropdown__image braintree-dropdown__image--padding">
+                      <img src="img/icon__visacheckout.png" class="braintree-icon--visacheckout" />
+                  </div>
+              </a>
+              <a class="braintree-dropdown__option braintree-dropdown__option--divider">
+                  <label class="braintree-dropdown__label" for="">Masterpass</label>
+                  <div class="braintree-dropdown__image braintree-dropdown__image--padding">
+                      <img src="img/icon__masterpass.png" class="braintree-icon--masterpass" />
+                  </div>
+              </a>
+          </div>
+      </div>
+      <!-- end braintree-dropdown -->
+
+      <!--[if lt IE 9]>
+        <div class="braintree-alert braintree-alert--error">You are using an <strong>outdated</strong> browser. Please <a class="braintree-alert__link" href="http://browsehappy.com/">upgrade your browser</a> to check out.</div>
+      <![endif]-->
+
+      <div class="braintree-alert braintree-alert--error">Something went wrong on our end. Please try again.</div>
+      <div class="braintree-alert braintree-alert--error">Please check your information and try again.</div>
+      <div class="braintree-alert braintree-alert--error">Something went wrong adding the PayPal account, try again.</div>
+      <div class="braintree-alert braintree-alert--error">Something went wrong connecting to PayPal, try again.</div>
+      <div class="braintree-alert braintree-alert--error">This browser is not supported, try another browser.</div>
+
+      <div id="cardLogos" class="braintree-card-logos__group braintree-hide">
+          <svg height="28" width="48" class="braintree-icon">
+              <use xlink:href="#icon-visa"></use>
+          </svg>
+          <svg height="28" width="48" class="braintree-icon">
+              <use xlink:href="#icon-master-card"></use>
+          </svg>
+          <svg height="28" width="48" class="braintree-icon">
+              <use xlink:href="#icon-unionpay"></use>
+          </svg>
+          <svg height="28" width="48" class="braintree-icon">
+              <use xlink:href="#icon-american-express"></use>
+          </svg>
+          <svg height="28" width="48" class="braintree-icon">
+              <use xlink:href="#icon-jcb"></use>
+          </svg>
+          <svg height="28" width="48" class="braintree-icon">
+              <use xlink:href="#icon-diners-club"></use>
+          </svg>
+          <svg height="28" width="48" class="braintree-icon">
+              <use xlink:href="#icon-discover"></use>
+          </svg>
+          <svg height="28" width="48" class="braintree-icon">
+              <use xlink:href="#icon-maestro"></use>
+          </svg>
+      </div>
+
+      <form id="cardForm" action="" class="braintree-form braintree-form--card braintree-hide">
+          <fieldset class="braintree-form__fieldset">
+              <label class="braintree-form__label braintree-form__label--relative">
+                  Card Number
+                  <div class="braintree-form__fields braintree-form__fields--hosted" id="cardNumber"></div>
+                  <div id="cardNumberIcon" class="braintree-form__icon--absolute braintree-hide">
+                      <svg height="28" width="48" class="braintree-icon">
+                          <use xlink:href="#iconCardFront"></use>
+                      </svg>
+                  </div>
+              </label>
+              <div class="braintree-form__inline-error">Looks like this card type is not accepted.</div>
+              <div class="braintree-form__inline-error">The card number must be 12–19 digits.</div>
+              <div class="braintree-form__inline-error">This card number is not valid.</div>
+              <div class="braintree-form__inline-error">Please fill out a card number.</div>
+          </fieldset>
+          <fieldset class="braintree-form__fieldset">
+              <label class="braintree-form__label">
+                  Expiration Date <span class="braintree-form__descriptor">(MM/YY)</span>
+                  <div class="braintree-form__fields braintree-form__fields--hosted" id="expirationDate"></div>
+              </label>
+              <div class="braintree-form__inline-error">Looks like this expiration date is not valid.</div>
+              <div class="braintree-form__inline-error">Please fill out an expiration date.</div>
+          </fieldset>
+          <fieldset class="braintree-form__fieldset">
+              <label class="braintree-form__label braintree-form__label--relative">
+
+                  CVV <span class="braintree-form__descriptor">(3 digits)</span>
+
+                  <div class="braintree-form__fields braintree-form__fields--hosted" id="cvv"></div>
+
+                  <div id="cvvIcon" class="braintree-form__icon--absolute braintree-hide">
+                      <svg height="28" width="48" class="braintree-icon">
+                          <use xlink:href="#iconCVVBack"></use>
+                      </svg>
+                  </div>
+              </label>
+              <div class="braintree-form__inline-error">CVV should be 3 digits.</div>
+              <div class="braintree-form__inline-error">CVV should be 4 digits.</div>
+              <div class="braintree-form__inline-error">Please fill out a CVV.</div>
+          </fieldset>
+          <fieldset class="braintree-form__fieldset">
+              <label class="braintree-form__label">
+                  Postal Code
+                  <div class="braintree-form__fields braintree-form__fields--hosted" id="postalCode"></div>
+              </label>
+              <div class="braintree-form__inline-error">This postal code is not valid.</div>
+              <div class="braintree-form__inline-error">Please fill out a postal code.</div>
+          </fieldset>
+          <button id="buttonUseCard" class="braintree-form__button" type="button">
+             Use This Card
+          </button>
+      </form>
+
+    </div>
+</div>
+<!-- end dropin -->
+
+<!-- Load the required client component. -->
+<script src="https://js.braintreegateway.com/web/3.0.0-beta.9/js/client.min.js"></script>
+
+<!-- Load Hosted Fields component. -->
+<script src="https://js.braintreegateway.com/web/3.0.0-beta.9/js/hosted-fields.min.js"></script>
+
+<script src="js/main.js"></script>
