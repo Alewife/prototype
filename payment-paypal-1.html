@@ -32,38 +32,40 @@
   </div>
 </header><div class="main-content">
   <header class="cart__header">
-    <a href="index.html">< Back</a>
-    <h2>Checkout</h2>
-  </header><!-- end cart header -->
+    <a href="index.html">
+      < Back</a>
+        <h2>Checkout</h2>
+  </header>
+  <!-- end cart header -->
 
- <ol class="list list--inline progress-bar">
+  <ol class="list list--inline progress-bar">
   <li class="list__item list__item--inline ">1. Address Details</li>
   <li class="list__item list__item--inline ">2. Shipping</li>
   <li class="list__item list__item--inline progress-bar--active">3. Payment</li>
   <li class="list__item list__item--inline ">4. Review</li>
-</ol><!-- end progress bar --><div class="flex">
-  <div class="table left--40 padding-all">
-    <h3 class="margin-">Summary</h3>
-    <div class="table__row">
-      <div class="table__item left">Peppers and Olives</div>
-      <div class="table__item right text-align--right">$20.00</div>
+</ol><!-- end progress bar -->  <div class="flex">
+    <div class="table left--40 padding-all">
+      <h3 class="margin-">Summary</h3>
+      <div class="table__row">
+        <div class="table__item left">Peppers and Olives</div>
+        <div class="table__item right text-align--right">$20.00</div>
+      </div>
+      <div class="table__row">
+        <div class="table__item left">Tax</div>
+        <div class="table__item right text-align--right">$2.00</div>
+      </div>
+      <div class="table__row">
+        <div class="table__item left">Shipping (Drone)</div>
+        <div class="table__item right text-align--right">$40.00</div>
+      </div>
+      <div class="table__row table__row--footer">
+        <div class="table__item left"><strong>Total</strong></div>
+        <div class="table__item right text-align--right"><strong>$62.00</strong></div>
+      </div>
     </div>
-    <div class="table__row">
-      <div class="table__item left">Tax</div>
-      <div class="table__item right text-align--right">$2.00</div>
-    </div>
-    <div class="table__row">
-      <div class="table__item left">Shipping (Drone)</div>
-      <div class="table__item right text-align--right">$40.00</div>
-    </div>
-    <div class="table__row table__row--footer">
-      <div class="table__item left"><strong>Total</strong></div>
-      <div class="table__item right text-align--right"><strong>$62.00</strong></div>
-    </div>
-  </div>
 
-  <div class="drop-in right--60 padding-all">
-        <svg width="0" height="0" class="braintree-display--none">
+    <div class="drop-in right--60 padding-all">
+            <svg width="0" height="0" class="braintree-display--none">
     <defs>
         <symbol id="icon-visa" viewBox="0 0 50 32">
             <title>Visa Logo</title>
@@ -283,26 +285,27 @@
     </defs>
 </svg>
 
-    <div id="braintreePaymentSelect" class="braintree-dropdown__option--default__container">
+      <div id="braintreePaymentSelect" class="braintree-dropdown__option--default__container">
         <a id="dropdownDefault" class="braintree-dropdown__option--default">
-            <div id="dropdownText" class="braintree-dropdown__option--default__text">Choose a payment method</div>
+          <div id="dropdownText" class="braintree-dropdown__option--default__text">Choose a payment method</div>
 
-            <svg id="vaultedMethodIcon" height="28" width="48" class="braintree-icon braintree-hide braintree-translateY-small">
-           <use xlink:href="#icon-visa"></use>
-         </svg>
-            <dl id="vaultedMethod" class="braintree-list--definition braintree-hide braintree-translateY-small">
-                <dt class="braintree-list__term">Ending in ••35</dt>
-                <dd class="braintree-list__desc">Visa</dd>
-            </dl>
+          <svg id="vaultedMethodIcon" height="28" width="48" class="braintree-icon braintree-hide braintree-translateY-small">
+            <use xlink:href="#icon-visa"></use>
+          </svg>
+          <dl id="vaultedMethod" class="braintree-list--definition braintree-hide braintree-translateY-small">
+            <dt class="braintree-list__term">Ending in ••35</dt>
+            <dd class="braintree-list__desc">Visa</dd>
+          </dl>
 
-            <svg height="24" width="24" id="braintreeArrow" class="braintree-icon--arrow">
-                <use xlink:href="#iconArrow"></use>
-            </svg>
+          <svg height="24" width="24" id="braintreeArrow" class="braintree-icon--arrow">
+            <use xlink:href="#iconArrow"></use>
+          </svg>
         </a>
-    </div>
+      </div>
 
-  </div><!-- end dropin -->
-</div>
+    </div>
+    <!-- end dropin -->
+  </div>
 
   <div class="modal--paypal">
     <form class="form form--modal">
@@ -315,7 +318,7 @@
     <img usemap="#login" class="paypal-login" src="img/paypal-login.png" />
     <map name="login">
       <area shape="rect" coords="20,340,429,383" href="payment-paypal-2.html"/>
-      <area shape="rect" coords="0,0,25,25" href="payment.html"/>
+      <area shape="rect" coords="0,0,25,25" href="payment-multiple.html"/>
     </map>
   </div>
 
@@ -323,7 +326,8 @@
     <a href="payment.html">Continue</a>
   </button>
 
-</div><!-- end main content -->
+</div>
+<!-- end main content -->
 
         <footer class="main-footer">
         &copy; 1999 Pizza Warehouse

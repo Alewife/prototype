@@ -23,20 +23,20 @@
    additionalOptions = document.getElementById('braintreeAdditionalOptions');
    merchantButton = $('#buttonPay');
    useCardBtn = document.getElementById('buttonUseCard');
+   paymentOptions = $('.braintree-exposed__option');
 
    function showSelectedPaymentOption(event) {
      // Choosing a way to pay
      event.data.optionHeader.parentElement.classList.remove('option--is-closed');
      event.data.optionHeader.parentElement.classList.add('option--is-open');
+     $(event.data.optionHeader).addClass('clickable--header');
 
      $('.option--is-closed').addClass('option--is-hidden').removeClass('option--is-closed');
 
-     // $('.option--is-open .braintree-exposed__header').on('click', function(){
-     //   additionalOptions.classList.add('braintree-hide');
-     //
-     //   $('.braintree-exposed__option').removeClass('option--is-hidden').removeClass('option--is-open').addClass('option--is-closed');
-     //
-     // });
+    //  $('.clickable--header').on('click', function(){
+    //    $('.option--is-open .braintree-exposed__header').removeClass('clickable--header');
+    //    paymentOptions.removeClass('option--is-hidden option--is-open option--is-saved').addClass('option--is-closed');
+    //  });
 
      // Show additional payment options
      additionalOptions.classList.remove('braintree-hide');
@@ -67,19 +67,18 @@
    additionalOptions.addEventListener('click', function() {
      this.classList.add('braintree-hide');
 
-     paymentOptions = document.getElementsByClassName('braintree-exposed__option');
+     $('.option--is-open .braintree-exposed__header').removeClass('clickable--header');
 
      $(exposedHeader).removeClass('braintree-hide');
      $(exposedSaved).addClass('braintree-hide');
-     merchantButton.addClass("button--disabled");
-     merchantButton.removeClass("button--main");
 
-     for (var x = 0; x < paymentOptions.length; x++) {
-       paymentOptions[x].classList.remove('option--is-hidden');
-       paymentOptions[x].classList.remove('option--is-open');
-       paymentOptions[x].classList.remove('option--is-saved');
-       paymentOptions[x].classList.add('option--is-closed');
-     }
+     merchantButton.addClass("button--disabled").removeClass("button--main");
+
+     paymentOptions.each(function(){
+        $(this).removeClass('option--is-hidden option--is-open option--is-saved').addClass('option--is-closed');
+     });
+
+
 
    });
 
